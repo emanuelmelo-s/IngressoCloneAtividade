@@ -1,6 +1,7 @@
 ﻿using IngressoMVC.Models.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace IngressoMVC.Models
 {
@@ -32,10 +33,18 @@ namespace IngressoMVC.Models
         public int Id { get; private set; }
         public DateTime DataCadastro { get; private set; }
         public DateTime DataAlteracao { get; private set; }
-        public string Titulo { get; private set; }
-        public string Descricao { get; private set; }
-        public decimal Preco { get; private set; }
-        public string ImageURL { get; private set; }
+
+        [Display(Name = "Título")]
+        public string Titulo { get; set; }
+
+        [Display(Name = "Descrição")]
+        public string Descricao { get; set; }
+
+        [Display(Name = "Valor")]
+        public decimal Preco { get; set; }
+
+        [Display(Name = "Foto")]
+        public string ImageURL { get; set; }
 
         #region relacionamentos
         public int CinemaId { get; set; }

@@ -37,9 +37,9 @@ namespace IngressoMVC.Controllers
             _context.Add(filme);
             _context.SaveChanges();
 
-            foreach (var categoria in filmeDto.Categorias)
+            foreach (var categoria in filmeDto.CategoriasId)
             {
-                int? categoriaId = _context.Categorias.Where(c => c.Nome == categoria).FirstOrDefault().Id;
+                int? categoriaId = _context.Categorias.Where(c => c.Id == categoria).FirstOrDefault().Id;
 
                 if (categoriaId != null)
                 {

@@ -63,6 +63,7 @@ namespace IngressoMVC.Controllers
         [HttpPost]
         public IActionResult Atualizar(int id, PostCinemaDTO cinemaDTO)
         {
+
             var result = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
             result.AtualizarDados(cinemaDTO.Nome, cinemaDTO.Descricao, cinemaDTO.LogoURL);
             _context.Cinemas.Update(result);
